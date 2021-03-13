@@ -19,5 +19,11 @@ class Starter extends Denizen {
       velocity: new Vector(xVel, yVel),
       type: this.tank.getRandomSpecies(),
     });
+
+    // Do a little hop
+    let $starter = $('#' + this.id);
+    $starter.css({ transition: 'all 0.5s' });
+    this.position.y += 40;
+    setTimeout(() => this.position.y -= 40, 100);
   }
 }
